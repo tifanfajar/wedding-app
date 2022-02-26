@@ -1,0 +1,50 @@
+.containerCardOne {
+   background: linear-gradient(45deg, rgba(238,225,162,0.5200280795912116) 0%, rgba(197,177,140,1) 96%);
+   /* display: flex; */
+   /* flex-direction: column; */
+   /* padding: 0 1rem 0 1rem; */
+   display: block;
+   height: 35rem;
+}
+.titleCard {
+   margin: auto;
+   text-align: center;
+   margin-top: 2rem;
+   font-size: 2rem;
+}
+.imgCard {
+ border-radius: 1rem;
+}
+.imageContainer {
+   width: 27vw !important;
+   height: 19rem;
+   flex-direction: row;
+   margin: auto;
+   margin-top: 2rem;
+   /* justify-content: center;
+   display: flex; */
+   /* box-shadow: 5px 10px #eee; */
+}
+.btnContainer {
+   margin: auto;
+   margin-top: 5rem;
+}
+@media only screen and (min-width: 850px) and (max-width: 1280px) {
+ .imageContainer {
+   width: 45vw !important;
+   height: 5rem;
+ }
+ .btnContainer {
+   margin-top: 19.5rem;
+ }
+}
+
+@media only screen and (max-width: 849px) {
+ .imageContainer {
+   width: 70vw !important;
+   height: 4rem;
+ }
+ .btnContainer {
+   margin-top: 15rem;
+ }
+}
