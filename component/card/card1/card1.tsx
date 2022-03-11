@@ -1,10 +1,6 @@
 import styles from './card1.module.css'
 import Image from 'next/image'
-import Button from '@mui/material/Button';
-interface cardChild {
-   title: string;
-   images: string;
-}
+import {cardChild} from '../../interface/card1Inteface'
 const CardOne = (props:cardChild) => {
    return (
       <div className={styles.containerCardOne}>

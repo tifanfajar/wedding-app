@@ -24,12 +24,12 @@ const Header: NextPage = () => {
    // var x = 0
    var y = window.pageYOffset
    // var classNew = navRef?.current?.className
-   if (y >= 450 && y < 900) {
+   if (y >= 450 && y < 1200) {
       // x = 1
       navRef?.current?.classList.add('scroll')
       setMenuActive(1)
    } 
-   else if (y >= 900 && y < 2000) {
+   else if (y >= 1200 && y < 2000) {
     navRef?.current?.classList.add('scroll')
     setMenuActive(2)
    }

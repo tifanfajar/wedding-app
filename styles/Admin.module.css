@@ -1,0 +1,122 @@
+.loadingIndex {
+  margin: auto;
+  text-align: center;
+  height: 51rem;
+  width: 100%;
+  background: linear-gradient(196deg, rgba(125,81,17,1) 0%, rgba(240,218,81,1) 96%);
+  color: #fff
+}
+.containerAdmin {
+   /* background: lime; */
+   width: 100%;
+   display: flex;
+   height: 100%;
+}
+
+.navbar {
+  /* display: flex; */
+  /* position: fixed; */
+  height: 51rem;
+  width: 13rem;
+  background: linear-gradient(196deg, rgba(125,81,17,1) 0%, rgba(240,218,81,1) 96%);
+}
+.navbar > * {
+  /* width: 100%; */
+  color: #fff;
+}
+.navbar > .containerName {
+   margin-top: 3rem;
+}
+.imgProfile {
+ width: 5rem;
+ /* height: 5rem; */
+ /* border: 3px solid #cdcdcd; */
+ /* box-shadow: #000 5px 5px; */
+ /* border-radius:5rem; */
+}
+.navbar > .containerMenu {
+   margin-top: 3rem;
+}
+.navbar > .containerMenu > ul {
+   list-style: none;
+}
+.navbar > .containerMenu > ul > li {
+   margin-bottom: 1rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   transition: .5s;
+   width: 6rem;
+}
+.navbar > .containerMenu > ul > li:hover {
+ border-bottom: .4rem solid rgb(240,170,67);
+ color: #fff;
+}
+.active {
+ border-bottom: .4rem solid rgb(240,170,67);
+ color: #fff;
+}
+
+.containerContent {
+  padding: 4rem;
+  color: rgb(73, 70, 70);
+  width: 100%;
+  background: #fff;
+}
+
+.separator {
+  background: linear-gradient(196deg, rgba(125,81,17,1) 0%, rgba(240,218,81,1) 96%);
+  width: 100%;
+  height: .2rem;
+  border-radius: .3rem;
+}
+
+.tblContainer {
+  margin-top: 1rem;
+  width: 100%;
+  /* height: 30rem;
+  overflow: auto; */
+}
+
+.tblOddEven {
+  border-top: 1px solid #000;
+  border-collapse: collapse;
+}
+table.tblOddEven > thead > tr {
+  height: 3rem
+}
+table.tblOddEven > tbody > tr {
+  border-bottom: 1px solid #000;
+  height: 2rem;
+  cursor: pointer;
+}
+table.tblOddEven > tbody > tr:nth-child(odd) {
+  background: #cdcdcd;
+  color: #fff
+}
+/* table.tblOddEven > tbody > tr > td {
+ width: calc(((1/var(--data-length)) * 100%) / var(--data-length));
+}
+table.tblOddEven > thead > tr > td {
+  width: calc(((1/var(--data-length)) * 100%) / var(--data-length));
+} */
+table.tblOddEven > tbody > tr:hover {
+ background: #eee;
+}
+.backArrow {
+  /* width: 2rem;
+  height: 2rem; */
+  margin-right: 1rem;
+  margin-top: 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.backArrow:hover{
+ background: #eee;
+}
+
+.formOne {
+ display: grid;
+ gap: 20px 10px;
+ width: 100%;
+ grid-template-columns: auto auto;
+}

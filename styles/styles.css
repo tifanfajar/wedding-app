@@ -23,8 +23,14 @@ a {
 .cf1 {
    flex: 1;
 }
+.cf2 {
+  flex: 2;
+}
 .cf9 {
    flex: 9;
+}
+.cjcsb {
+  justify-content: space-between;
 }
 .cjcc {
    justify-content: center;
