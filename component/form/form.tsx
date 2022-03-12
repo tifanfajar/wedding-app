@@ -5,12 +5,10 @@ import MenuItem from '@mui/material/MenuItem';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 import Select from '@mui/material/Select';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-// import { FormControl } from '@mui/material';
-// import TextField from '@mui/material/TextField';
+import dynamic from "next/dynamic"
+const MapOne = dynamic(() => import("../map/map"), { ssr: false });
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import { FormControl } from '@mui/material';
 const Form = (props: any) => {
    const handleOnchange = (e:any) => {
       props.handleChange({value: e.target.value, id: e.target.id})
@@ -59,22 +57,27 @@ const Form = (props: any) => {
       }
       case 'check': {
         return (
-         <FormControl fullWidth key={`key-${i}`}>
-           <FormControlLabel control={<Checkbox defaultChecked />} label={val.label} checked={val.value} onClick={_ => handleOnchange({target: {id: val.key, value: !val.value}})}/>
-         </FormControl>
+         // <FormControl fullWidth key={`key-${i}`}>
+          <div key={`key-${i}`}>
+           <Checkbox  checked={val.value} onClick={_ => handleOnchange({target: {id: val.key, value: !val.value}})}/>
+           <span>{val.label}</span>
+          </div>
+         // </FormControl>
         )
       }
       default: {
         return (<div key={`key-${i}`}></div>)
       }
      }
+
     })
    }
    return (
-    <div className={styles.tblContainer + " cflex cjcsb"}>
+    <div className={styles.tblContainer + " cflex cjcsb cffdc"}>
      <div className={styles.formOne}>
       {innerForm()}
       </div>
+      {(props.isMap && typeof window !== "undefined") ? <div className={styles.mapContainer}><MapOne onDrag={handleOnchange} data={props.forms}/></div> : ''}
     </div>
    )
 }

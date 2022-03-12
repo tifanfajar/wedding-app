@@ -24,11 +24,16 @@ const ThemeList = () => {
   })
  }, [asPath])
  return (
+  <>
+  {/* <div className={styles.loadingContainer}>
+    <div className={styles.innerLoading}>tes</div>
+  </div> */}
   <div className={styles.containerAdmin}>
    <Navbar/>
    {/* <List/> */}
    <Component.component/>
   </div>
+  </>
  )
 }
 

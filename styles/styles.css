@@ -1,3 +1,9 @@
+:root {
+ --space: 0rem;
+ --space-xs: calc(var(--space) / 3);
+ --space-sm: calc(var(--space) / 2);
+ --space-md: calc(var(--space) * 2);
+}
 html,
 body {
   padding: 0;
@@ -613,4 +619,25 @@ a {
    transform: translateX(0);
    opacity: 1;
  }
+}
+
+.leaflet-control-geosearch {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 5.5rem;
+}
+.leaflet-control-geosearch > form > input {
+  position: absolute;
+  z-index: 1000;
+  height: 2rem;
+  width: 15rem;
+}
+.leaflet-control-geosearch > form > .results {
+  background: #fff;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.leaflet-control-geosearch > form > .results > div:hover {
+  background: #cdcdcd;
+  /* cursor: pointer; */
 }

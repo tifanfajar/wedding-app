@@ -3,6 +3,8 @@ import Form from '../../form/form'
 import { useState, useEffect } from 'react';
 import {connect} from 'react-redux'
 import * as Actions from '../../store/actions'
+import * as Api from '../../../config/api'
+import moment from 'moment'
 const Add = (props: any) => {
  const label = useState({
    title: 'Add New Theme',
@@ -31,13 +33,45 @@ const Add = (props: any) => {
   // console.log(input)
    props.dispatch(Actions.changeForm(input))
  } 
+ const handleAdd = () => {
+   var jsonSent = {}
+   var empty:any = {}
+   props.addTheme.AdminReducers.ThemeReducer.AddThemeFormReducer.map((val: any, i: any) => {
+     if (val.value !== '') {
+      if (val.key !== 'none') {
+        if (val.type === 'datetime') {
+         jsonSent = {...jsonSent, [val.key]: moment(val.value).format('YYYY-MM-DD H:mm:ss')}
+        }
+        else if (val.type === 'check') {
+         jsonSent = {...jsonSent, [val.key]: (val.value) ? '1' : '0'}
+        }
+        else if (val.key === 'longitude' || val.key === 'latitude') {
+         jsonSent = {...jsonSent, [val.key]: val.value.toString()}
+        } else {
+         jsonSent = {...jsonSent, [val.key]: val.value}
+        }
+      }
+     } else {
+        empty = {...empty, [val.key]: {'label': val.label, 'key': val.key}}
+     }
+   })
+   if (Object.keys(empty).length < 1) {
+    console.log(jsonSent)
+    jsonSent = {...jsonSent,"iduser": "1"}
+    var url = Api.golangWedding + 'theme/create'
+    var param = ''
+    Api.postJson(url, param, JSON.stringify(jsonSent))
+   } else {
+    console.log(Object.keys(empty).length)
+   }
+ }
  return (
-   <AdminAdd label={{...label}} child={childs(props, handleInput)}/>
+   <AdminAdd label={{...label}} child={childs(props, handleInput)} handle={handleAdd}/>
  )
 }
 const childs = (props:any, handleInput: any) => {
    return (
-     <Form forms={props.addTheme.AdminReducers.ThemeReducer.AddThemeFormReducer} handleChange={handleInput}/>
+     <Form forms={props.addTheme.AdminReducers.ThemeReducer.AddThemeFormReducer} handleChange={handleInput} isMap={true}/>
    )
 }
 export default connect(state => ({

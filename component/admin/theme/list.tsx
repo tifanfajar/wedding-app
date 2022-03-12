@@ -111,10 +111,10 @@ const List = (props: any) => {
     getList()
     getCount()
     // console.log(props.theme.AdminReducers.ThemeReducer.ThemeSelectCategoryReducer)
-  }, [])
+  }, [props.theme.AdminReducers.ThemeReducer.ThemeSelectCategoryReducer.value])
   useEffect(() => {
     getList()
-  }, [pagination, props.theme.AdminReducers.ThemeReducer.ThemeSelectCategoryReducer.value])
+  }, [pagination])
   const handleAdd = () => {
     routes.push('add-theme')
   }
